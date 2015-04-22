@@ -12,4 +12,10 @@ var courseRoster = angular.module('courseRoster', ['ui.router']);
             controller: 'CoursesCtrl'
         });
 
+        $stateProvider.state('courses.students', {
+            url: "/:courseId",
+            templateUrl:"partials/courses.students.html",
+            controller: 'StudentsCtrl'
+        });
+
 });
