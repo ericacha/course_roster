@@ -10,28 +10,16 @@
         <script src="controllers/StudentsController.js"></script>
         <script src="services/CoursesFactory.js"></script>
         <script src="services/UtilitiesFactory.js"></script>
-
         <link rel="stylesheet" href="css/bootstrap.min.css" >
-
-        <style>
-        body {
-            text-align:;
-            background:url("https://s-media-cache-ak0.pinimg.com/originals/42/9e/41/429e418435009a468550753a18c22787.jpg");
-            background-size: cover;
-            color: white;
-            font-family: helvetica;
-            }
-        h3 {
-            color: white;
-        }
-        li {
-            color:red;
-        }
-        </style>
     </head>
     <body>
         <div class="container">
             <div ui-view></div>
+
+            <div ng-app="courseRoster">
+                <welcomeText></welcomeText>
+            </div>
+
 
         </div>
     </body>

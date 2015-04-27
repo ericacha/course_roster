@@ -8,7 +8,7 @@ var courseRoster = angular.module('courseRoster', ['ui.router']);
 
         $stateProvider.state('courses', {
             url: "/courses",
-            templateUrl:"partials/courses.html",
+            templateUrl:"partials/courses.detail.html",
             controller: 'CoursesCtrl'
         });
 
@@ -18,4 +18,11 @@ var courseRoster = angular.module('courseRoster', ['ui.router']);
             controller: 'StudentsCtrl'
         });
 
+});
+
+courseRoster.directive("welcomeText", function() {
+    return {
+        restrict: "E",
+        template:"<div>Welcome!</div>"
+    }
 });
