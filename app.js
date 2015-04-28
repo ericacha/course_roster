@@ -71,8 +71,54 @@ var courseRoster = angular.module('courseRoster', ['ui.router']);
                     display:"="
                 },
                 template:'<input type="text" ng-model="display">'
-                    
+
             }
 
+
+    });
+
+    //part 1 of how it displays the name of the class with the last two lines 'link and scope.item'
+    // courseRoster.directive("sampleCourse", function() {
+    //         return {
+    //             scope:{},
+    //             template:'<div> {{ item }} </div>',
+    //             link:function (scope, element, attrs) {
+    //                 scope.item = attrs.item;
+    //
+    //             }
+    //
+    //         }
+    //
+    //
+    // });
+
+        // part 2 of how it can also display with just the '@' isolate scope.--courses.student.html
+    courseRoster.directive("sampleCourse", function() {
+            return {
+                scope:{
+                    // this '@' is the same as link:function (scope, element, attrs) { scope.item = attrs.item;
+                    item:"@"
+                },
+                template:'<div> {{ item }} </div>',
+
+            }
+
+    });
+
+
+    courseRoster.directive("debug", function($compile) {
+            return {
+                terminal: true,
+                priority: 1000000,
+                link: function (scope, element) {
+                    var clone = element.clone();
+                    element.attr("style", "color:red")
+                    clone.removeAttr("debug");
+                    var clonedElement = $compile(clone)(scope);
+                    element.after(clonedElement);
+                        }
+
+
+            }
 
     });
