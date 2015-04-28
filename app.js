@@ -54,13 +54,25 @@ var courseRoster = angular.module('courseRoster', ['ui.router']);
     });
 
     courseRoster.directive("welcomeText", function() {
-            return
-            restrict: "EA",
-            function(scope, element, attrs) {
-                element.bind("mouseleave", function() {
-                    console.log(attrs.welcomeText);
-
-                });
+            return {
+                scope:{
+                    display:"&"
+                },
+                template:'<input type="text" ng-model="value">' +
+                    '<div class="button" ng-click="display({message:value})"> chitra</div>'
             }
+
+
+    });
+
+    courseRoster.directive("welcome", function() {
+            return {
+                scope:{
+                    display:"="
+                },
+                template:'<input type="text" ng-model="display">'
+                    
+            }
+
 
     });

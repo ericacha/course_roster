@@ -1,5 +1,8 @@
 courseRoster.controller('CoursesCtrl', function CoursesCtrl($scope, CoursesFactory) {
     $scope.courses = CoursesFactory.courses;
     $scope.CoursesFactory = CoursesFactory;
-    $scope.message = "Hello";
+    $scope.sayHi = function (message) {
+        alert(message);
+    };
+    $scope.person = "erica";
 });
