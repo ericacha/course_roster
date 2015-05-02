@@ -1,7 +1,7 @@
 <h1> Course Roster  </h1>
 Description
 
-Course roster app allows the user to add student names and courses. The student can be added to a course.
+Incomplete. 
 
 <b> April 22nd, 2015 | Erica Cha & Chitra Atmakuru</b>
 
